@@ -1,4 +1,4 @@
-package com.shraddha;
+package com.capgemini;
 
 import java.util.*;
 
@@ -54,7 +54,6 @@ class Employee implements Comparable<Employee>{
 		// TODO Auto-generated method stub
 		return this.name.compareTo(o.getName());
 	}
-	
 	
 }
 
@@ -137,10 +136,9 @@ public class MyEmployeeManagement {
 						deleteFlag = false;
 						break;
 					}
-					
-					if(deleteFlag) {
-						System.out.println("Record not found");
-					}
+				}
+				if(deleteFlag) {
+					System.out.println("Record not found");
 				}
 			}
 			
@@ -149,7 +147,17 @@ public class MyEmployeeManagement {
 			}
 			
 			if(choice == 6) {
-				Arrays.sort(emp);
+				Employee temp = new Employee();
+				for(int i=0; i<emp.length-1; i++) {
+					for(int j=i+1; j<emp.length;j++) {
+						if(emp[i].getName().compareTo(emp[j].getName())>0) {
+							temp = emp[i];
+							emp[i] = emp[j];
+							emp[j] = temp;
+						}
+					}
+				}
+				
 				for(int i=0;i<emp.length;i++) {
 					System.out.println(emp[i].toString());
 				}
@@ -157,11 +165,104 @@ public class MyEmployeeManagement {
 			}
 			
 			if(choice == 7) {
-				Arrays.sort(emp);
-				for(int i=emp.length-1; i>=0; i--) {
+				Employee temp = new Employee();
+				for(int i=0; i<emp.length-1; i++) {
+					for(int j=i+1; j<emp.length;j++) {
+						if(emp[i].getName().compareTo(emp[j].getName())<0) {
+							temp = emp[i];
+							emp[i] = emp[j];
+							emp[j] = temp;
+						}
+					}
+				}
+				
+				for(int i=0;i<emp.length;i++) {
 					System.out.println(emp[i].toString());
 				}
 				
+			}
+			
+			if(choice == 8) {
+				Employee temp = new Employee();
+				for(int i=0; i<emp.length-1; i++) {
+					int j=i+1;
+					while(j>0 && emp[j].getSalary() < emp[j-1].getSalary()) {
+						temp = emp[j];
+						emp[j] = emp[j-1];
+						emp[j-1] = temp;
+						j--;
+					}
+				}
+				
+				for(int i=0;i<emp.length;i++) {
+					System.out.println(emp[i].toString());
+				}
+			}
+			
+			if(choice == 9) {
+				Employee temp = new Employee();
+				for(int i=0; i<emp.length-1; i++) {
+					int j=i+1;
+					while(j>0 && emp[j].getSalary() > emp[j-1].getSalary()) {
+						temp = emp[j];
+						emp[j] = emp[j-1];
+						emp[j-1] = temp;
+						j --;
+					}
+				}
+				
+				for(int i=0;i<emp.length;i++) {
+					System.out.println(emp[i].toString());
+				}
+			}
+			
+			if(choice == 10) {
+				int minSalary = emp[0].getSalary();
+				String minSalaryEmployee = emp[0].getName();
+				
+				for(int i=0; i<emp.length; i++) {
+					if(emp[i].getSalary() < minSalary) {
+						minSalary = emp[i].getSalary();
+						minSalaryEmployee = emp[i].getName();
+					}
+				}
+				
+				System.out.println("Minimum salary holding employee is : "+minSalaryEmployee+" and his/her salary is : "+minSalary);
+				
+			}
+			
+			if(choice == 11) {
+				int maxSalary = emp[0].getSalary();
+				String maxSalaryEmployee = emp[0].getName();
+				
+				for(int i=0; i<emp.length; i++) {
+					if(emp[i].getSalary() > maxSalary) {
+						maxSalary = emp[i].getSalary();
+						maxSalaryEmployee = emp[i].getName();
+					}
+				}
+				
+				System.out.println("Maximum salary holding employee is : "+maxSalaryEmployee+" and his/her salary is : "+maxSalary);
+				
+			}
+			
+			if(choice == 12) {
+				int sum = 0;
+				for(int i = 0; i<emp.length; i++) {
+					sum += emp[i].getSalary();
+				}
+				
+				System.out.println("Sum of employee salary is : "+sum);
+			}
+			
+			if(choice == 13) {
+				double avg;
+				int sum = 0;
+				for(int i = 0; i<emp.length; i++) {
+					sum += emp[i].getSalary();
+				}
+				avg = sum/emp.length;
+				System.out.println("Average of employee salary is : "+avg);
 			}
 			
 			
