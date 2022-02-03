@@ -1,10 +1,14 @@
 package com.StringPrograms;
 import java.util.Scanner;
 
+// Hello World
+// olleH dlroW
+
 public class ReverseWordsFromSentence {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter string : ");
 		String sentence = sc.nextLine();
 		String reverseString = "";
 		

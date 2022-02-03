@@ -1,6 +1,8 @@
 package com.StringPrograms;
 import java.util.Scanner;
 
+// a b c b a
+
 public class PallindromeString {
 
 	public static void main(String[] args) {
