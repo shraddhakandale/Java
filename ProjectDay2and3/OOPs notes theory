@@ -1,0 +1,8 @@
+
+OOP in java
+--> top down approach
+--> classes: class is a blueprint of an object
+--> objects: object is any real world entity which has some state and behavior
+	* object can have attributes and method
+	variables => attributes
+	methods => behavior
