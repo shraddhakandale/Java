@@ -107,6 +107,7 @@ public class MyCollection {
 		System.out.println();
 		System.out.println("*********Stack*********");
 		System.out.println();
+		
 		// Stack -> LIFO
 		// stack -> fifo
 		Stack<Integer> stk = new Stack<Integer>();
@@ -131,6 +132,7 @@ public class MyCollection {
 		System.out.println();
 		System.out.println("*********Linked List*********");
 		System.out.println();
+		
 		// LinkedList
 		LinkedList<Integer> ll = new LinkedList<Integer>();
 		ll.add(123);
@@ -142,7 +144,7 @@ public class MyCollection {
 		System.out.println("Initial linked list is : "+ll.toString());
 		
 		// returns and removes first element -> head of linked list
-		System.out.println("Head of inked list is : "+ll.pollFirst());
+		System.out.println("Head of linked list is : "+ll.pollFirst());
 		
 		// returns and removes last element -> tail of linked list
 		System.out.println("Tail of the linked list is : "+ll.pollLast());
@@ -151,7 +153,7 @@ public class MyCollection {
 		System.out.println("Removed head from the linked list : "+ll.poll());
 		
 		// print linked list
-		System.out.println("after removing head the linked list is : "+ll.toString());		
+		System.out.println("Final linked list is : "+ll.toString());		
 
 	}
 
