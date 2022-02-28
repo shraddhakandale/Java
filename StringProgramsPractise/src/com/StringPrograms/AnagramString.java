@@ -8,6 +8,7 @@ import java.util.*;
 public class AnagramString {
 
 	public static void main(String[] args) {
+		
 		int num_of_chars = 256;
 		int[] charArray = new int[num_of_chars];
 		boolean isAnagram = true;
@@ -23,10 +24,14 @@ public class AnagramString {
 			System.out.println("Not anagram");
 		}
 		else {
+			// aab
+			// charArray[0] = 0, charArray[1] = 0,....charArray[97] = 0, charArray[98] = 0,.....charArray[256] = 0
 			for(int i=0; i<str1.length(); i++) {
-				charArray[str1.charAt(i)]++;  //charArray[97] = 1
+				charArray[str1.charAt(i)]++;  // charArray['a']  => charArray[97] = 1
 			}
 			
+			// baa
+			// charArray[0] = 0, charArray[1] = 0,....charArray[97] = 2, charArray[98] = 1,.....charArray[256] = 0
 			for(int i=0; i<str2.length(); i++) {
 				charArray[str2.charAt(i)]--;
 			}
