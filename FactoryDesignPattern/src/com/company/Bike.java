@@ -5,10 +5,11 @@ public class Bike extends Vehicle implements Runnable {
 	private boolean buttonStart = false;
 	private boolean isStopped = true;
 	
+	
 	public Bike(String vehicleType, String modelName, int yearOfManufacture, int price) {
 		super(vehicleType, modelName, yearOfManufacture, price);
-		// TODO Auto-generated constructor stub
 	}
+	
 	
 	@Override
 	public boolean start() {

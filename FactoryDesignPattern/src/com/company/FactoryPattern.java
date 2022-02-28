@@ -1,5 +1,7 @@
 package com.company;
 
+//import com.company.Bike.Petrol;
+
 public class FactoryPattern {
 
 	public static void main(String[] args) {
