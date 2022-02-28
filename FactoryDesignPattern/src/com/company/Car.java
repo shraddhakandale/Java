@@ -1,6 +1,6 @@
 package com.company;
 
-public class Car extends Vehicle{
+public class Car extends Vehicle implements Runnable{
 	
 	private boolean ignition = false;
 	private String stearing;
@@ -11,7 +11,7 @@ public class Car extends Vehicle{
 		this.stearing = stearing;
 	}
 	
-//	@Override
+	@Override
 	public boolean start() {
 		return this.ignition;
 	}
@@ -20,7 +20,7 @@ public class Car extends Vehicle{
 	public void run() {
 		
 		if(this.start()) {
-		System.out.println("vehicle is running with the speed 100km/hr");
+		System.out.println("Car is running with the speed 100km/hr");
 		}
 		else {
 			System.out.println("Car has not started yet please start the car");
@@ -39,11 +39,11 @@ public class Car extends Vehicle{
 	@Override
 	public void stop() {
 		if(this.isStopped || !this.ignition) {
-		System.out.println("Vehicle stopped");
+		System.out.println("Car stopped");
 		this.ignition = false;
 		}
 		else {
-			System.out.println("Vehicle is not stopped please apply breaks");
+			System.out.println("Car is not stopped please apply breaks");
 		}
 	}
 	

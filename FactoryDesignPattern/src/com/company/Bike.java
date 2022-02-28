@@ -1,6 +1,6 @@
 package com.company;
 
-public class Bike extends Vehicle implements StartVehicle {
+public class Bike extends Vehicle implements Runnable {
 	
 	private boolean buttonStart = false;
 	private boolean isStopped = true;
@@ -11,33 +11,31 @@ public class Bike extends Vehicle implements StartVehicle {
 	}
 	
 	@Override
-	public void start() {
-		if(this.buttonStart) {
-			System.out.println("Bike has already started check speed.");
-		}
-		else {
-			this.buttonStart = true;
-			System.out.println("Bike started");
-		}
+	public boolean start() {
+		return this.buttonStart;
 	}
 	
 	@Override
 	public void run() {
-		if(this.buttonStart) {
-		System.out.println("vehicle is running with the speed 60km/hr");
-		}
-		else {
-			System.out.println("Bike has not started . start the bike");
-		}
+		if(this.start()) {
+			System.out.println("Bike is running with the speed 60km/hr");
+			}
+			else {
+				System.out.println("Bike has not started yet please start the car");
+				System.out.println("Starting the bike ...");
+				this.buttonStart = true;
+				this.run();
+			}
 	}
 
 	@Override
 	public void stop() {
 		if(this.isStopped || !this.buttonStart) {
-			System.out.println("Vehicle stopped");
+			System.out.println("Bike stopped");
+			this.buttonStart = false;
 			}
 			else {
-				System.out.println("Vehicle is not stopped please apply breaks");
+				System.out.println("Bike is not stopped please apply breaks");
 			}
 	}
 
